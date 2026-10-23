@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkyCast sample weather dashboard built with HTML, CSS and JavaScript.">
+  <title>SkyCast — Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SkyCast home">
+        <span class="brand-icon">☁</span>
+        skycast<span class="brand-dot">.</span>
+      </a>
+      <span class="demo-label"><span class="dot"></span> DEMO WEATHER DATA</span>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="eyebrow">YOUR WEATHER, SIMPLIFIED</p>
+        <h1>A clearer view<br>of <span>your day.</span></h1>
+        <p class="intro-text">
+          Explore sample weather conditions and plan your day.
+        </p>
+      </section>
+
+      <section class="search-area" aria-label="Search weather">
+        <form id="searchForm" class="search-form">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <label class="sr-only" for="cityInput">Search a city</label>
+          <input
+            id="cityInput"
+            type="search"
+            placeholder="Search city, e.g. Chennai"
+            autocomplete="off"
+            required
+          >
+          <button type="submit">Search <span>→</span></button>
+        </form>
+        <p class="search-hint">Try Chennai, Coimbatore, Bengaluru, Mumbai or Delhi.</p>
+        <p id="searchMessage" class="message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="weather-card" aria-label="Selected city weather">
+        <div class="weather-heading">
+          <div>
+            <p class="eyebrow">CURRENT CONDITIONS</p>
+            <h2 id="cityName">Chennai</h2>
+            <p id="weatherDate" class="muted">Sample forecast</p>
+          </div>
+          <button id="unitToggle" class="unit-toggle" type="button"
+            aria-label="Switch temperature unit">°C / °F</button>
+        </div>
+
+        <div class="current-weather">
+          <div>
+            <p id="weatherDescription" class="condition">Partly cloudy</p>
+            <div class="temperature">
+              <span id="temperature">32</span><span class="degree">°</span>
+            </div>
+            <p class="feels-like">Feels like <span id="feelsLike">35</span>°</p>
+          </div>
+          <div class="weather-illustration" id="weatherIcon" aria-hidden="true">🌤️</div>
+        </div>
+
+        <div class="weather-stats">
+          <div class="stat">
+            <span class="stat-icon">💧</span>
+            <div><p>Humidity</p><strong id="humidity">68%</strong></div>
+          </div>
+          <div class="stat">
+            <span class="stat-icon">💨</span>
+            <div><p>Wind speed</p><strong id="wind">14 km/h</strong></div>
+          </div>
+          <div class="stat">
+            <span class="stat-icon">☀️</span>
+            <div><p>UV index</p><strong id="uv">7 · High</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="forecast-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PLAN AHEAD</p>
+            <h2>Next 5 days</h2>
+          </div>
+          <span class="forecast-note">Sample forecast</span>
+        </div>
+        <div id="forecastList" class="forecast-list"></div>
+      </section>
+
+      <section class="note">
+        <span class="note-icon">ⓘ</span>
+        <p><strong>Demo project:</strong> Weather values are sample data for learning
+          purposes and are not live forecasts.</p>
+      </section>
+    </main>
+
+    <footer>
+      <span>skycast<span class="brand-dot">.</span></span>
+      <span>Made with HTML, CSS & JavaScript</span>
+    </footer>
+  </div>
+</body>
+</html>
